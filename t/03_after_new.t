@@ -7,12 +7,12 @@ use DBIx::Skinny::Profiler::ProfileLogger;
 BEGIN {
     eval "use DBD::SQLite";
     plan skip_all => "DBD::SQLite is not installed. skip testing" if $@;
-    $ENV{SKINNY_PROFILE} = 'query.log';
+    $ENV{SKINNY_PROFILE} = '1=query.log';
 }
 
 use Mock::Basic2;
 
-my $file = $ENV{SKINNY_PROFILE};
+my ( $file ) = $ENV{SKINNY_PROFILE} =~ /=(.+)$/;
 
 if ( -s $file ) {
     unlink $file;

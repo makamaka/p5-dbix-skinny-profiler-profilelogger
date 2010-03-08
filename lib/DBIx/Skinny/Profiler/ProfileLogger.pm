@@ -6,7 +6,7 @@ use DBIx::Skinny::Accessor;
 
 mk_accessors(qw/ log_fh /);
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 sub init {
@@ -21,14 +21,17 @@ sub init {
 
 sub open_fh {
     my ( $self, $env ) = @_;
+    my $fh;
 
-    if ( $env =~ /^\d+$/ ) {
-        $self->log_fh( *STDERR );
+    if ( $env =~ /=(.+)$/ ) {
+        open( $fh, '>>', $1 ) or Carp::croak "$! $env";
     }
     else {
-        open( my $fh, '>>', $env ) or Carp::croak "$! $env";
-        $self->log_fh( $fh );
+        $fh = *STDERR;
     }
+
+    $fh->autoflush();
+    $self->log_fh( $fh );
 }
 
 
@@ -95,7 +98,7 @@ DBIx::Skinny::Profiler::ProfileLogger - a profiler printing at once instead of r
     $skinny->attribute->{ profiler } = DBIx::Skinny::Profiler::ProfileLogger->new;
     
     # You set the environment variable SKINNY_PROFILE=1, then print to STDERR.
-    # If set SKINNY_PROFILE=/path/to/file, logs to the file.
+    # If set SKINNY_PROFILE=1=/path/to/file, logs to the file.
 
 
 =head1 DESCRIPTION
@@ -105,8 +108,14 @@ you need to print out recorded queries manually.
 
 This module prints out STDERR or your specified file at once instead of recording queries.
 
-The environmental variable C<SKINNY_PROFILE> must be set with C<1> or a log file path
-for using this profiler.
+The environmental variable C<SKINNY_PROFILE> must be set with C<1> for using this profiler.
+
+  $ENV{SKINNY_PROFILE} = 1;
+
+If you add a file path to its value, this module print to the spcified file.
+
+  $ENV{SKINNY_PROFILE} = '1=/path/to/file'; # (DBIC_TRACE compat)
+
 
 =head1 SEE ALSO
 
