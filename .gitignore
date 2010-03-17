@@ -16,3 +16,4 @@ tmp/*
 ex/*
 diff_*
 .shipit
+pod.txt
