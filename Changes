@@ -1,5 +1,8 @@
 Revision history for Perl extension DBIx::Skinny::Profiler::ProfileLogger.
 
+0.03  Wed Mar 17 14:58:23 2010
+	- release on CPAN
+
 0.02  Mon Mar  8 12:42:55 2010
 	- made DBIC_TRACE compat
 
