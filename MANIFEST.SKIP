@@ -1,0 +1,17 @@
+\.[oc]$
+\.bs$
+\.tgz$
+\.tar\.gz$
+\.git
+\.bak$
+\.shipit$
+blib/
+\.old$
+Makefile$
+MANIFEST\.SKIP
+pm_to_blib
+tmp/
+META.yml
+ex/
+DBIx-Skinny-Profiler-ProfileLogger*
+pod\.txt
