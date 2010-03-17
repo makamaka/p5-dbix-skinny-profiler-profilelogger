@@ -1,12 +1,13 @@
 package DBIx::Skinny::Profiler::ProfileLogger;
 
+use 5.008;
 use strict;
 use warnings;
 use DBIx::Skinny::Accessor;
 
 mk_accessors(qw/ log_fh /);
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 
 sub init {
