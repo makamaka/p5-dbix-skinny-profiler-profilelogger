@@ -1,5 +1,5 @@
-blib
-inc
+blib/
+inc/
 cover_db
 Makefile
 META.yml
