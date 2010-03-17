@@ -20,6 +20,7 @@ inc/Test/More.pm
 lib/DBIx/Skinny/Profiler/ProfileLogger.pm
 Makefile.PL
 MANIFEST
+META.yml
 README
 t/01_schema.t
 t/02_setup.t

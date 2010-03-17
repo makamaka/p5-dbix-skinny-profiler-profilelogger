@@ -1,5 +1,8 @@
 Revision history for Perl extension DBIx::Skinny::Profiler::ProfileLogger.
 
+0.05 Wed Mar 17 17:30:09 2010
+	- missing META.yml
+
 0.04  Wed Mar 17 15:31:58 2010
 	- missing inc dir
 
