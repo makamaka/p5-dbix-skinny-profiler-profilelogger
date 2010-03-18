@@ -4,6 +4,7 @@ use 5.008;
 use strict;
 use warnings;
 use DBIx::Skinny::Accessor;
+use Carp ();
 
 mk_accessors(qw/ log_fh /);
 
