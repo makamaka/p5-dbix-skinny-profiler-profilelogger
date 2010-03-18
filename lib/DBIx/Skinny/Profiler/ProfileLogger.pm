@@ -8,7 +8,7 @@ use Carp ();
 
 mk_accessors(qw/ log_fh /);
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 
 sub init {
@@ -78,7 +78,7 @@ __END__
 
 =head1 NAME
 
-DBIx::Skinny::Profiler::ProfileLogger - a profiler printing at once instead of recording queries.
+DBIx::Skinny::Profiler::ProfileLogger - a profiler printing at once instead of recording queries (obsoleted).
 
 =head1 SYNOPSIS
     
@@ -101,6 +101,20 @@ DBIx::Skinny::Profiler::ProfileLogger - a profiler printing at once instead of r
     
     # You set the environment variable SKINNY_PROFILE=1, then print to STDERR.
     # If set SKINNY_PROFILE=1=/path/to/file, logs to the file.
+
+
+=head1 OBSOLETED
+
+Now L<DBIx::Skinny> has this feature.
+
+  $ENV{SKINNY_TRACE} = 1;
+  
+  # or
+  
+  $ENV{SKINNY_TRACE} = '1=/path/to/file';
+
+
+DBIx::Skinny::Profiler::ProfileLogger will be deleted.
 
 
 =head1 DESCRIPTION

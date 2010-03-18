@@ -1,5 +1,9 @@
 Revision history for Perl extension DBIx::Skinny::Profiler::ProfileLogger.
 
+0.06 Thu Mar 18 10:55:42 2010
+	- OBSOLETED (DBIx::Skinny will have this feature)
+    - added missing 'use Carp'
+
 0.05 Wed Mar 17 17:30:09 2010
 	- missing META.yml
 
